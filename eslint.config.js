@@ -32,6 +32,7 @@ export default tseslint.config(
     rules: {
       ...reactHooks.configs.recommended.rules,
       'react-refresh/only-export-components': 'error',
+      '@typescript-eslint/no-namespace': 'off',
       'import/order': [
         'error',
         {
@@ -43,25 +44,25 @@ export default tseslint.config(
     },
   },
   {
-    files: ['src/ui/**/*.{ts,tsx}', '!src/ui/**/interfaces.ts', '!src/ui/**/enums.ts'],
+    files: ['src/ui/**/*.{ts,tsx}'],
     rules: {
       'no-restricted-syntax': [
         'error',
         {
           selector: 'TSInterfaceDeclaration',
-          message: 'Interfaces must be defined em interfaces.ts, não em arquivos comuns.',
+          message: 'Interfaces must be defined in interfaces.ts, not in regular files.',
         },
         {
           selector: 'TSTypeAliasDeclaration',
-          message: 'Type aliases devem ser definidos em interfaces.ts, não em arquivos comuns.',
+          message: 'Type aliases must be defined in interfaces.ts, not in regular files.',
         },
         {
           selector: 'TSEnumDeclaration',
-          message: 'Enums devem ser definidos em enums.ts, não em arquivos comuns.',
+          message: 'Enums must be defined in enums.ts, not in regular files.',
         },
         {
           selector: 'TSDeclareFunction',
-          message: 'Function declarations devem ser definidas em interfaces.ts, não em arquivos comuns.',
+          message: 'Function declarations must be defined in interfaces.ts, not in regular files.',
         },
       ],
     },
@@ -73,7 +74,7 @@ export default tseslint.config(
         'error',
         {
           selector: 'TSEnumDeclaration',
-          message: 'Enums devem ser definidos em enums.ts, não em interfaces.ts.',
+          message: 'Enums must be defined in enums.ts, not in interfaces.ts.',
         },
       ],
     },
@@ -85,15 +86,15 @@ export default tseslint.config(
         'error',
         {
           selector: 'TSInterfaceDeclaration',
-          message: 'Interfaces devem ser definidas em interfaces.ts, não em enums.ts.',
+          message: 'Interfaces must be defined in interfaces.ts, not in enums.ts.',
         },
         {
           selector: 'TSTypeAliasDeclaration',
-          message: 'Type aliases devem ser definidos em interfaces.ts, não em enums.ts.',
+          message: 'Type aliases must be defined in interfaces.ts, not in enums.ts.',
         },
         {
           selector: 'TSDeclareFunction',
-          message: 'Function declarations devem ser definidas em interfaces.ts, não em enums.ts.',
+          message: 'Function declarations must be defined in interfaces.ts, not in enums.ts.',
         },
       ],
     },
