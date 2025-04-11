@@ -43,8 +43,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['src/ui/**/*.{ts,tsx}'],
-    excludedFiles: ['**/interfaces.ts', '**/enums.ts'],
+    files: ['src/ui/**/*.{ts,tsx}', '!src/ui/**/interfaces.ts', '!src/ui/**/enums.ts'],
     rules: {
       'no-restricted-syntax': [
         'error',
